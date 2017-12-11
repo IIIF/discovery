@@ -264,12 +264,16 @@ __Usage:__  Record each time the list is crawled. Start from the `last` page and
 
 ## Processing Algorithm
 
+__Collection Algorithm__
+
 Given the URI of an ActivityStreams Collection (`collection`) as input, a conforming processor SHOULD:
 
 * Retrieve the representation of `collection` via HTTP(S)
 * Minimally validate that it conforms to the specification
 * Find the URI of the last page at `collection.last.id` (`pageN`)
 * Apply the results of the page algorithm
+
+__Page Algorithm__
 
 Given the URI of an ActivityStreams CollectionPage (`page`) and the date of last crawling (`lastCrawl`) as input, a conforming processor SHOULD:
 
@@ -280,6 +284,9 @@ Given the URI of an ActivityStreams CollectionPage (`page`) and the date of last
 * For each `activity`, if `activity.endTime` is before `lastCrawl`, then terminate ;
 * Otherwise, if `activity.type` is `Update` or `Create`, then find the URI of the updated resource at `activity.target.id` (`target`) and apply the target resource algorithm.
 * Otherwise, if `activity.type` is `Delete`, then find the URI of the deleted resource at `activity.target.id` and remove it from the index.
+* Finally, find the URI of the previous page at `collection.prev.id` and apply the results of the page algorithm.
+
+__Target Resource Algorithm__
 
 Given the URI of a target resource (`target`), a conforming processor SHOULD:
 
