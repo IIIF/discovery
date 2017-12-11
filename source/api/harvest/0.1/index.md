@@ -271,7 +271,7 @@ Given the URI of an ActivityStreams Collection (`collection`) as input, a confor
 * Retrieve the representation of `collection` via HTTP(S)
 * Minimally validate that it conforms to the specification
 * Find the URI of the last page at `collection.last.id` (`pageN`)
-* Apply the results of the page algorithm
+* Apply the results of the page algorithm to `pageN`
 
 __Page Algorithm__
 
@@ -284,7 +284,8 @@ Given the URI of an ActivityStreams CollectionPage (`page`) and the date of last
 * For each `activity`, if `activity.endTime` is before `lastCrawl`, then terminate ;
 * Otherwise, if `activity.type` is `Update` or `Create`, then find the URI of the updated resource at `activity.target.id` (`target`) and apply the target resource algorithm.
 * Otherwise, if `activity.type` is `Delete`, then find the URI of the deleted resource at `activity.target.id` and remove it from the index.
-* Finally, find the URI of the previous page at `collection.prev.id` and apply the results of the page algorithm.
+* Finally, find the URI of the previous page at `collection.prev.id` (`pageN1`)
+* Apply the results of the page algorithm to `pageN1`
 
 __Target Resource Algorithm__
 
