@@ -262,6 +262,35 @@ __Usage:__  Record each time the list is crawled. Start from the `last` page and
 }
 ```
 
+## Processing Algorithm
+
+Given the URI of an ActivityStreams Collection (`collection`) as input, a conforming processor SHOULD:
+
+* Retrieve the representation of `collection` via HTTP(S)
+* Minimally validate that it conforms to the specification
+* Find the URI of the last page at `collection.last.id` (`pageN`)
+* Apply the results of the page algorithm
+
+Given the URI of an ActivityStreams CollectionPage (`page`) and the date of last crawling (`lastCrawl`) as input, a conforming processor SHOULD:
+
+* Retrieve the representation of `page` via HTTP(S)
+* Minimally validate that it conforms to the specification
+* Find the set of updates of the page at `page.items` (`items`)
+* In reverse order, iterate through the activities (`activity`) in `items`
+* For each `activity`, if `activity.endTime` is before `lastCrawl`, then terminate ;
+* Otherwise, if `activity.type` is `Update` or `Create`, then find the URI of the updated resource at `activity.target.id` (`target`) and apply the target resource algorithm.
+* Otherwise, if `activity.type` is `Delete`, then find the URI of the deleted resource at `activity.target.id` and remove it from the index.
+
+Given the URI of a target resource (`target`), a conforming processor SHOULD:
+
+* Retrieve the representation of `target` via HTTP(S)
+* Minimally validate that it conforms to the appropriate specification
+* Find the URI of the resource at `target.id` (`targetId`)
+* Extract the indexable content from the resource, using resource type specific functionality.
+* Check if `target.seeAlso` is true, and if so, iterate through the available descriptions at `target.seeAlso[x].id` and extract the indexable content from those resources.
+* Index the content against `targetId`
+
+
 
 ## Ongoing Experiments
 
