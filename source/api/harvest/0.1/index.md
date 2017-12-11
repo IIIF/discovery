@@ -281,9 +281,9 @@ Given the URI of an ActivityStreams CollectionPage (`page`) and the date of last
 * Minimally validate that it conforms to the specification
 * Find the set of updates of the page at `page.items` (`items`)
 * In reverse order, iterate through the activities (`activity`) in `items`
-* For each `activity`, if `activity.endTime` is before `lastCrawl`, then terminate ;
-* Otherwise, if `activity.type` is `Update` or `Create`, then find the URI of the updated resource at `activity.target.id` (`target`) and apply the target resource algorithm.
-* Otherwise, if `activity.type` is `Delete`, then find the URI of the deleted resource at `activity.target.id` and remove it from the index.
+  * For each `activity`, if `activity.endTime` is before `lastCrawl`, then terminate ;
+  * Otherwise, if `activity.type` is `Update` or `Create`, then find the URI of the updated resource at `activity.target.id` (`target`) and apply the target resource algorithm ;
+  * Otherwise, if `activity.type` is `Delete`, then find the URI of the deleted resource at `activity.target.id` and remove it from the index.
 * Finally, find the URI of the previous page at `collection.prev.id` (`pageN1`)
 * Apply the results of the page algorithm to `pageN1`
 
