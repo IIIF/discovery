@@ -16,13 +16,13 @@ __Use Case:__ As a content publisher, I want to alert search engines that I crea
 
 ```json
 {
-	"id": "http://example.org/iiif/discovery/event/54627",
-	"type": "Create",
-	"object": {
-		"id": "https://example.org/iiif/museum/1/manifest.json",
-		"type": "Manifest"
-	},
-	"endTime": "2017-06-08T00:00:00Z"
+  "id": "http://example.org/iiif/discovery/event/54627",
+  "type": "Create",
+  "object": {
+    "id": "https://example.org/iiif/museum/1/manifest.json",
+    "type": "Manifest"
+  },
+  "endTime": "2017-06-08T00:00:00Z"
 }
 ```
 
@@ -37,13 +37,13 @@ __Use Case:__ As a content publisher, I want to alert search engines that I upda
 
 ```json
 {
-	"id": "http://example.org/iiif/discovery/event/100001",
-	"type": "Update",
-	"object": {
-		"id": "https://example.org/iiif/museum/1/manifest.json",
-		"type": "Manifest"
-	},
-	"endTime": "2017-09-19T20:00:00Z"
+  "id": "http://example.org/iiif/discovery/event/100001",
+  "type": "Update",
+  "object": {
+    "id": "https://example.org/iiif/museum/1/manifest.json",
+    "type": "Manifest"
+  },
+  "endTime": "2017-09-19T20:00:00Z"
 }
 ```
 
@@ -57,13 +57,13 @@ __Use Case:__ As a content publisher, I want to alert search engines that I dele
 
 ```json
 {
-	"id": "http://example.org/iiif/discovery/event/8172645",
-	"type": "Delete",
-	"object": {
-		"id": "https://example.org/iiif/museum/1/manifest.json",
-		"type": "Manifest"
-	},
-	"endTime": "2017-09-19T20:00:00Z"
+  "id": "http://example.org/iiif/discovery/event/8172645",
+  "type": "Delete",
+  "object": {
+    "id": "https://example.org/iiif/museum/1/manifest.json",
+    "type": "Manifest"
+  },
+  "endTime": "2017-09-19T20:00:00Z"
 }
 ```
 
@@ -86,17 +86,17 @@ __Use Case:__ As a content publisher, I want to alert search engines that I adde
 
 ```json
 {
-	"id": "http://example.org/iiif/discovery/event/123462",
-	"type": "Add",
-	"object": {
-		"id": "https://example.org/iiif/museum/1/manifest.json",
-		"type": "Manifest"
-	},
-	"target": {
-		"id": "https://example.org/iiif/museum/paintings/collection.json",
-		"type": "Collection"
-	},
-	"endTime": "2017-09-19T20:00:00Z"
+  "id": "http://example.org/iiif/discovery/event/123462",
+  "type": "Add",
+  "object": {
+    "id": "https://example.org/iiif/museum/1/manifest.json",
+    "type": "Manifest"
+  },
+  "target": {
+    "id": "https://example.org/iiif/museum/paintings/collection.json",
+    "type": "Collection"
+  },
+  "endTime": "2017-09-19T20:00:00Z"
 }
 ```
 
@@ -112,17 +112,17 @@ __Use Case:__ As a content publisher, I want to alert search engines that I remo
 
 ```json
 {
-	"id": "http://example.org/iiif/discovery/event/123462",
-	"type": "Remove",
-	"object": {
-		"id": "https://example.org/iiif/museum/1/manifest.json",
-		"type": "Manifest"
-	},
-	"origin": {
-		"id": "https://example.org/iiif/museum/paintings/collection.json",
-		"type": "Collection"
-	},
-	"endTime": "2017-09-19T20:00:00Z"
+  "id": "http://example.org/iiif/discovery/event/123462",
+  "type": "Remove",
+  "object": {
+    "id": "https://example.org/iiif/museum/1/manifest.json",
+    "type": "Manifest"
+  },
+  "origin": {
+    "id": "https://example.org/iiif/museum/paintings/collection.json",
+    "type": "Collection"
+  },
+  "endTime": "2017-09-19T20:00:00Z"
 }
 ```
 
@@ -140,17 +140,17 @@ __Use Case:__ Needed for Copy to be included. Does anyone actually copy rather t
 
 ```json
 {
-	"id": "http://example.org/iiif/discovery/event/123462",
-	"type": "Copy",
-	"object": {
-		"id": "https://example.org/iiif/museum/1/manifest.json",
-		"type": "Manifest"
-	},
-	"target": {
-		"id": "https://example.org/iiif/publications/102314/manifest.json",
-		"type": "Manifest"
-	},
-	"endTime": "2017-09-19T20:00:00Z"
+  "id": "http://example.org/iiif/discovery/event/123462",
+  "type": "Copy",
+  "object": {
+    "id": "https://example.org/iiif/museum/1/manifest.json",
+    "type": "Manifest"
+  },
+  "target": {
+    "id": "https://example.org/iiif/publications/102314/manifest.json",
+    "type": "Manifest"
+  },
+  "endTime": "2017-09-19T20:00:00Z"
 }
 ```
 
@@ -166,17 +166,17 @@ __Use Case:__ As a content publisher, I want to alert search engines that I have
 
 ```json
 {
-	"id": "http://example.org/iiif/discovery/event/123462",
-	"type": "Move",
-	"object": {
-		"id": "https://example.org/iiif/museum/1/manifest.json",
-		"type": "Manifest"
-	},
-	"target": {
-		"id": "https://example.org/iiif/publications/102314/manifest.json",
-		"type": "Manifest"
-	},
-	"endTime": "2017-09-19T20:00:00Z"
+  "id": "http://example.org/iiif/discovery/event/123462",
+  "type": "Move",
+  "object": {
+    "id": "https://example.org/iiif/museum/1/manifest.json",
+    "type": "Manifest"
+  },
+  "target": {
+    "id": "https://example.org/iiif/publications/102314/manifest.json",
+    "type": "Manifest"
+  },
+  "endTime": "2017-09-19T20:00:00Z"
 }
 ```
 
@@ -193,23 +193,23 @@ __Use Case:__ Needed. While symmetrical with Split, we need an actual use case f
 
 ```json
 {
-	"id": "http://example.org/iiif/discovery/event/123462",
-	"type": "Merge",
-	"object": [
-		{
-			"id": "https://example.org/iiif/museum/1/manifest.json",
-			"type": "Manifest"
-		},
-		{
-			"id": "https://example.org/iiif/museum/2/manifest.json",
-			"type": "Manifest"
-		}
-	],
-	"target": {
-		"id": "https://example.org/iiif/museum/1726/manifest.json",
-		"type": "Manifest"
-	},
-	"endTime": "2017-09-19T20:00:00Z"
+  "id": "http://example.org/iiif/discovery/event/123462",
+  "type": "Merge",
+  "object": [
+    {
+      "id": "https://example.org/iiif/museum/1/manifest.json",
+      "type": "Manifest"
+    },
+    {
+      "id": "https://example.org/iiif/museum/2/manifest.json",
+      "type": "Manifest"
+    }
+  ],
+  "target": {
+    "id": "https://example.org/iiif/museum/1726/manifest.json",
+    "type": "Manifest"
+  },
+  "endTime": "2017-09-19T20:00:00Z"
 }
 ```
 
@@ -227,23 +227,23 @@ __Use Case:__ As a content publisher, I want to alert search engines that I spli
 
 ```json
 {
-	"id": "http://example.org/iiif/discovery/event/123462",
-	"type": "Split",
-	"object": {
-		"id": "https://example.org/iiif/museum/1726/manifest.json",
-		"type": "Manifest"
-	},
-	"target": [
-		{
-			"id": "https://example.org/iiif/museum/1/manifest.json",
-			"type": "Manifest"
-		},
-		{
-			"id": "https://example.org/iiif/museum/2/manifest.json",
-			"type": "Manifest"
-		}
-	],
-	"endTime": "2017-09-19T20:00:00Z"
+  "id": "http://example.org/iiif/discovery/event/123462",
+  "type": "Split",
+  "object": {
+    "id": "https://example.org/iiif/museum/1726/manifest.json",
+    "type": "Manifest"
+  },
+  "target": [
+    {
+      "id": "https://example.org/iiif/museum/1/manifest.json",
+      "type": "Manifest"
+    },
+    {
+      "id": "https://example.org/iiif/museum/2/manifest.json",
+      "type": "Manifest"
+    }
+  ],
+  "endTime": "2017-09-19T20:00:00Z"
 }
 ```
 
@@ -260,17 +260,17 @@ A remote source resource has a new reference or link to the target local resourc
 
 ```json
 {
-	"id": "http://example.org/iiif/discovery/event/8172645",
-	"type": "Reference",
-	"object": {
-		"id": "https://example.edu/iiif/9/manifest.json",
-		"type": "Manifest"
-	},
-	"target": {
-		"id": "https://example.org/iiif/museum/1/manifest.json",
-		"type": "Manifest"
-	},
-	"endTime": "2017-09-19T20:00:00Z"
+  "id": "http://example.org/iiif/discovery/event/8172645",
+  "type": "Reference",
+  "object": {
+    "id": "https://example.edu/iiif/9/manifest.json",
+    "type": "Manifest"
+  },
+  "target": {
+    "id": "https://example.org/iiif/museum/1/manifest.json",
+    "type": "Manifest"
+  },
+  "endTime": "2017-09-19T20:00:00Z"
 }
 ```
 
@@ -283,13 +283,13 @@ The target resource was used by the remote agent in some way.
 
 ```json
 {
-	"id": "http://example.org/iiif/discovery/event/8172645",
-	"type": "Use",
-	"object": {
-		"id": "https://example.org/iiif/museum/1/manifest.json",
-		"type": "Manifest"
-	},
-	"endTime": "2017-09-19T20:00:00Z"
+  "id": "http://example.org/iiif/discovery/event/8172645",
+  "type": "Use",
+  "object": {
+    "id": "https://example.org/iiif/museum/1/manifest.json",
+    "type": "Manifest"
+  },
+  "endTime": "2017-09-19T20:00:00Z"
 }
 ```
 

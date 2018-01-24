@@ -119,28 +119,28 @@ __Usage:__ Record each time the list is crawled. Start from the `last` page and 
     "type": "Collection"
   },
   "next": {
-		"id": "https://data.getty.edu/iiif/discovery-2.json",
-		"type": "CollectionPage"
-	},
-	"items": [
-		{
-			"type": "Update",
-			"object": {
-				"id": "https://data.getty.edu/iiif/museum/1876/manifest.json",
-				"type": "Manifest"
-			},
-			"endTime": "2017-09-20T00:00:00Z"
-		},
-		{
-			"type": "Update",
-			"object": {
-				"id": "https://data.getty.edu/iiif/museum/33092/manifest.json",
-				"type": "Manifest"
-			},
-			"endTime": "2017-09-21T00:00:00Z"
-		}
-		// ...		
-	]
+    "id": "https://data.getty.edu/iiif/discovery-2.json",
+    "type": "CollectionPage"
+  },
+  "items": [
+    {
+      "type": "Update",
+      "object": {
+        "id": "https://data.getty.edu/iiif/museum/1876/manifest.json",
+        "type": "Manifest"
+      },
+      "endTime": "2017-09-20T00:00:00Z"
+    },
+    {
+      "type": "Update",
+      "object": {
+        "id": "https://data.getty.edu/iiif/museum/33092/manifest.json",
+        "type": "Manifest"
+      },
+      "endTime": "2017-09-21T00:00:00Z"
+    }
+    // ...    
+  ]
 }
 ```
 
@@ -166,38 +166,38 @@ __Usage__: Record each time the list is crawled. Start from the `last` page and 
 
 ```json-doc
 {
-	"@context": [
-		"http://iiif.io/api/presentation/3/context.json",
-		"https://www.w3.org/ns/activitystreams"],
-	"id": "https://example.org/iiif/discovery-1.json",
-	"type": "CollectionPage",
-	"partOf": {
-		"id": "https://example.org/iiif/discovery.json",
-		"type": "Collection"
-	},
-	"next": {
-		"id": "https://data.getty.edu/iiif/discovery-2.json",
-		"type": "CollectionPage"
-	},
-	"items": [
-		{
-			"id": "http://data.getty.edu/iiif/discovery/event/196421",
-			"type": "Update",
-			"actor": {
-				"id": "http://example.org/museum",
-				"type": "Organization"
-			},
-			"instrument": "http://github.com/example_org/iiif_museum_transformer",
-			"object": {
-				"id": "https://data.getty.edu/iiif/museum/33092/manifest.json",
-				"type": "Manifest",
-				"label": {"en": ["Example Museum Object"]},
-				"within": "https://example.org/iiif/museum/collection/paintings.json"
-			},
-			"startTime": "2017-09-19T20:00:00Z",
-			"endTime": "2017-09-19T20:01:00Z"
-		}
-	]
+  "@context": [
+    "http://iiif.io/api/presentation/3/context.json",
+    "https://www.w3.org/ns/activitystreams"],
+  "id": "https://example.org/iiif/discovery-1.json",
+  "type": "CollectionPage",
+  "partOf": {
+    "id": "https://example.org/iiif/discovery.json",
+    "type": "Collection"
+  },
+  "next": {
+    "id": "https://data.getty.edu/iiif/discovery-2.json",
+    "type": "CollectionPage"
+  },
+  "items": [
+    {
+      "id": "http://data.getty.edu/iiif/discovery/event/196421",
+      "type": "Update",
+      "actor": {
+        "id": "http://example.org/museum",
+        "type": "Organization"
+      },
+      "instrument": "http://github.com/example_org/iiif_museum_transformer",
+      "object": {
+        "id": "https://data.getty.edu/iiif/museum/33092/manifest.json",
+        "type": "Manifest",
+        "label": {"en": ["Example Museum Object"]},
+        "within": "https://example.org/iiif/museum/collection/paintings.json"
+      },
+      "startTime": "2017-09-19T20:00:00Z",
+      "endTime": "2017-09-19T20:01:00Z"
+    }
+  ]
 }
 ```
 
@@ -217,48 +217,48 @@ __Usage:__  Record each time the list is crawled. Start from the `last` page and
 
 ```json-doc
 {
-	"@context": [
-		"http://iiif.io/api/presentation/3/context.json",
-		"https://www.w3.org/ns/activitystreams"],
-	"id": "https://example.org/iiif/discovery-1.json",
-	"type": "CollectionPage",
-	"partOf": {
-		"id": "https://example.org/iiif/discovery.json",
-		"type": "Collection"
-	},
-	"next": {
-		"id": "https://example.org/iiif/discovery-2.json",
-		"type": "CollectionPage"
-	},
-	"items": [
-		{
-			"id": "http://data.getty.edu/iiif/discovery/event/196421",
-			"type": "Delete",
-			"object": {
-				"id": "https://data.getty.edu/iiif/museum/1/manifest.json",
-				"type": "Manifest"
-			},
-			"endTime": "2017-09-25T20:00:01Z"
-		},
-		{
-			"id": "http://data.getty.edu/iiif/discovery/event/100001",
-			"type": "Update",
-			"object": {
-				"id": "https://data.getty.edu/iiif/museum/1/manifest.json",
-				"type": "Manifest"
-			},
-			"endTime": "2017-09-19T20:01:00Z"
-		},
-		{
-			"id": "http://data.getty.edu/iiif/discovery/event/54627",
-			"type": "Create",
-			"object": {
-				"id": "https://data.getty.edu/iiif/museum/1/manifest.json",
-				"type": "Manifest"
-			},
-			"endTime": "2017-06-07T08:00:30Z"
-		}		
-	]
+  "@context": [
+    "http://iiif.io/api/presentation/3/context.json",
+    "https://www.w3.org/ns/activitystreams"],
+  "id": "https://example.org/iiif/discovery-1.json",
+  "type": "CollectionPage",
+  "partOf": {
+    "id": "https://example.org/iiif/discovery.json",
+    "type": "Collection"
+  },
+  "next": {
+    "id": "https://example.org/iiif/discovery-2.json",
+    "type": "CollectionPage"
+  },
+  "items": [
+    {
+      "id": "http://data.getty.edu/iiif/discovery/event/196421",
+      "type": "Delete",
+      "object": {
+        "id": "https://data.getty.edu/iiif/museum/1/manifest.json",
+        "type": "Manifest"
+      },
+      "endTime": "2017-09-25T20:00:01Z"
+    },
+    {
+      "id": "http://data.getty.edu/iiif/discovery/event/100001",
+      "type": "Update",
+      "object": {
+        "id": "https://data.getty.edu/iiif/museum/1/manifest.json",
+        "type": "Manifest"
+      },
+      "endTime": "2017-09-19T20:01:00Z"
+    },
+    {
+      "id": "http://data.getty.edu/iiif/discovery/event/54627",
+      "type": "Create",
+      "object": {
+        "id": "https://data.getty.edu/iiif/museum/1/manifest.json",
+        "type": "Manifest"
+      },
+      "endTime": "2017-06-07T08:00:30Z"
+    }    
+  ]
 }
 ```
 
@@ -312,8 +312,9 @@ Given the URI of a target resource (`target`), a conforming processor SHOULD:
   * Implementation: https://github.com/mattmcgrattan/iiif-activity-streams
 
 * OCLC
-  * Endpoint: http://52.204.112.237:3061/?action=range_search&fromDate=2017-10-10&toDate=2017-11-04&size=20
-  * Implementation:
+  * Endpoint: http://52.204.112.237:3051/activity-streams
+  * Implementation: https://github.com/mixterj/iiif_activity_streams_creation
+  * Consumer: https://github.com/mixterj/activity_streams_harvest
 
 * NCSU
   * Endpoint: https://scrc.lib.ncsu.edu/sal_staging/iiif-discovery.json
