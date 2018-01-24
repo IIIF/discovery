@@ -270,39 +270,42 @@ __Collection Algorithm__
 
 Given the URI of an ActivityStreams Collection (`collection`) as input, a conforming processor SHOULD:
 
-* Retrieve the representation of `collection` via HTTP(S)
-* Minimally validate that it conforms to the specification
-* Find the URI of the last page at `collection.last.id` (`pageN`)
-* Apply the results of the page algorithm to `pageN`
+1. Initialization:
+  1. Let `processedItems` be an empty array
+  2. Let `lastCrawl` be the timestamp of the previous time the algorithm was executed
+2. Retrieve the representation of `collection` via HTTP(S)
+3. Minimally validate that it conforms to the specification
+4. Find the URI of the last page at `collection.last.id` (`pageN`)
+5. Apply the results of the page algorithm to `pageN`
+
 
 __Page Algorithm__
 
 Given the URI of an ActivityStreams CollectionPage (`page`) and the date of last crawling (`lastCrawl`) as input, a conforming processor SHOULD:
 
-* Retrieve the representation of `page` via HTTP(S)
-* Minimally validate that it conforms to the specification
-* Find the set of updates of the page at `page.items` (`items`)
-* In reverse order, iterate through the activities (`activity`) in `items`
-  * For each `activity`, if `activity.endTime` is before `lastCrawl`, then terminate ;
-  * Otherwise, if `activity.type` is `Update` or `Create`, then find the URI of the updated resource at `activity.target.id` (`target`) and apply the target resource algorithm ;
-  * Otherwise, if `activity.type` is `Delete`, then find the URI of the deleted resource at `activity.target.id` and remove it from the index.
-* Finally, find the URI of the previous page at `collection.prev.id` (`pageN1`)
-* Apply the results of the page algorithm to `pageN1`
+1. Retrieve the representation of `page` via HTTP(S)
+2. Minimally validate that it conforms to the specification
+3. Find the set of updates of the page at `page.items` (`items`)
+4. In reverse order, iterate through the activities (`activity`) in `items`
+  1. For each `activity`, if `activity.endTime` is before `lastCrawl`, then terminate ;
+  2. If the updated resource's uri at `activity.target.id` is in `processedItems`, then continue ;
+  3. Otherwise, if `activity.type` is `Update` or `Create`, then find the URI of the updated resource at `activity.target.id` (`target`) and apply the target resource algorithm ;
+  4. Otherwise, if `activity.type` is `Delete`, then find the URI of the deleted resource at `activity.target.id` and remove it from the index.
+  5. Add the processed resource's URI to `processedItems`
+5. Finally, find the URI of the previous page at `collection.prev.id` (`pageN1`)
+6. Apply the results of the page algorithm to `pageN1`
 
 __Target Resource Algorithm__
 
 Given the URI of a target resource (`target`), a conforming processor SHOULD:
 
-* Retrieve the representation of `target` via HTTP(S)
-* Minimally validate that it conforms to the appropriate specification
-* Find the URI of the resource at `target.id` (`targetId`)
-* If the resource has the `seeAlso` property, then for each resource referenced ('extref')
-  * If the `format` and/or `profile` of `extref` is understood by the processor, then it should retrieve any representations that it can process to extract Indexable Content.
-
-* Extract the indexable content from the resource, using resource type specific functionality.
-* Check if `target.seeAlso` is true, and if so, iterate through the available descriptions at `target.seeAlso[x].id` and extract the indexable content from those resources.
-* Index the content against `targetId`
-
+1. Retrieve the representation of `target` via HTTP(S)
+2. Minimally validate that it conforms to the appropriate specification
+3. Find the URI of the resource at `target.id` (`targetId`)
+4. If the resource has the `seeAlso` property, then for each resource referenced ('extref')
+  1. If the `format` and/or `profile` of `extref` is understood by the processor, then it should retrieve any representations that it can process to extract Indexable Content.
+5. Otherwise, extract any indexable content from the resource's representation, using resource type specific functionality.
+6. Index the content against `targetId`
 
 
 ## Ongoing Experiments
