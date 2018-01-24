@@ -1,6 +1,6 @@
 # IIIF Notifications
 
-This information is extracted from the Crawling work, as it applies to notifications using the ActivityStreams pattern.
+This information is extracted from the [Crawling](/api/harvest/) work, as it applies to notifications using the [ActivityStreams](https://www.w3.org/TR/activitystreams-core/) pattern.
 
 ## Notifications of Change
 
@@ -18,4 +18,4 @@ ActivityPub is a method for transferring the notifications and subscribing, but 
 
 A more LOD / LDP / LDN appropriate pattern would be to use a REST pattern with Containers, that allow subscription to the inbox, manage filtering and the callback endpoint.  One way to do this could be as [described here](https://docs.google.com/document/d/1JsQS1LVFt8wuJSYo_XsOzyP28pS8hfSLEhAC3BFuN6o/edit).
 
-For the purposes of IIIF discovery, the above decision is firmly in the Notification section of the charter and does not impact the publication of the Activitystreams Collections as resources.
+For the purposes of IIIF discovery, the above decision is firmly in the Notification section of the charter and does not impact the publication of the ActivityStreams Collections as resources.

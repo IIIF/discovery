@@ -135,7 +135,8 @@ The source resource was duplicated to create or modify the target resource.  Thi
 
 For the purposes of discovery, the object resource's representation can be treated as the target resource's representation, but the object resource should not (yet) be removed from the index. This does not require the target resource to be re-harvested.
 
-__Use Case:__ Needed. Does one actually copy rather than move?
+__Use Case:__ Needed for Copy to be included. Does anyone actually copy rather than move, under what circumstances, and why?
+{: .warning}
 
 ```json
 {
@@ -187,7 +188,8 @@ Two or more source resources were combined to create or modify the target resour
 
 For the purposes of discovery, as the merge is not necessarily complete, nor is it clear whether or not the merged resources were deleted or modified as part of the process, all of the resources should be reharvested. The user interface for the discovery system might wish to group them together in some way to visualize the merge to the user.
 
-__Use Case:__ Needed. Not sure we often merge content?
+__Use Case:__ Needed. While symmetrical with Split, we need an actual use case for when and why anyone would merge resources.
+{: .warning}
 
 ```json
 {
@@ -217,9 +219,11 @@ Minumum Level: 4
 
 A single source resource was divided to create or modify multiple target resources.
 
-For the purposes of discovery, as the split is not necessarily complete, nor is it clear whether or not the original resource was deleted or modified as part of the process, all of the resources should be reharvested. The user interface for the discovery system might wish to group them together in some way to visualize the split to the user.
+For the purposes of discovery, as the split is not necessarily complete, nor is it clear whether or not the original resource was deleted or modified as part of the process, all of the resources should be reharvested.
 
-__Use Case:__ As a content publisher, I want to alert search engines that I split a Manifest representing a large archive into smaller pieces, where each piece better represents an object, and thus for search engines to reharvest all of the pieces.
+__Use Case:__ As a content publisher, I want to alert search engines that I split a Manifest representing a large archive into smaller pieces, where each piece better represents an object, and thus for search engines to reharvest all of the pieces. Note that there is no distinction between Split and Delete+Create+Create as everything needs to be harvested. Better use case required.
+{: .warning}
+
 
 ```json
 {

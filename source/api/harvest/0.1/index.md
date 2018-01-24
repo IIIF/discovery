@@ -36,21 +36,21 @@ Therefore, the Collection does not directly contain any of the activities or res
 
 ```json-doc
 {
-	"@context": [
-		"http://iiif.io/api/presentation/3/context.json",
-		"https://www.w3.org/ns/activitystreams"],
-	"id": "https://example.org/iiif/discovery.json",
-	"type": "Collection",
-	"label": "Example Big Collection",
-	"total": 33000,
-	"first": {
-		"id": "https://example.org/iiif/discovery-1.json",
-		"type": "CollectionPage"
-	},
-	"last": {
-		"id": "https://data.getty.edu/iiif/discovery-10.json",
-		"type": "CollectionPage"
-	}
+  "@context": [
+    "http://iiif.io/api/presentation/3/context.json",
+    "https://www.w3.org/ns/activitystreams"],
+  "id": "https://example.org/iiif/discovery.json",
+  "type": "Collection",
+  "label": "Example Big Collection",
+  "total": 33000,
+  "first": {
+    "id": "https://example.org/iiif/discovery-1.json",
+    "type": "CollectionPage"
+  },
+  "last": {
+    "id": "https://data.getty.edu/iiif/discovery-10.json",
+    "type": "CollectionPage"
+  }
 }
 ```
 
@@ -64,35 +64,35 @@ __Usage:__  Crawl the entire set of pages and dereference each manifest to see i
 
 ```json-doc
 {
-	"@context": [
-		"http://iiif.io/api/presentation/3/context.json",
-		"https://www.w3.org/ns/activitystreams"],
-	"id": "https://example.org/iiif/discovery-1.json",
-	"type": "CollectionPage",
-	"partOf": {
-		"id": "https://example.org/iiif/discovery.json",
-		"type": "Collection"
-	},
-	"next": {
-		"id": "https://example.org/iiif/discovery-2.json",
-		"type": "CollectionPage"
-	},
-	"items": [
-		{
-			"type": "Update",
-			"object": {
-				"id": "https://example.org/iiif/museum/1/manifest.json",
-				"type": "Manifest",
-			}
-		},
-		{
-			"type": "Update",
-			"object": {
-				"id": "https://example.org/iiif/museum/2/manifest.json",
-				"type": "Manifest"
-			}
-		}
-	]
+  "@context": [
+    "http://iiif.io/api/presentation/3/context.json",
+    "https://www.w3.org/ns/activitystreams"],
+  "id": "https://example.org/iiif/discovery-1.json",
+  "type": "CollectionPage",
+  "partOf": {
+    "id": "https://example.org/iiif/discovery.json",
+    "type": "Collection"
+  },
+  "next": {
+    "id": "https://example.org/iiif/discovery-2.json",
+    "type": "CollectionPage"
+  },
+  "items": [
+    {
+      "type": "Update",
+      "object": {
+        "id": "https://example.org/iiif/museum/1/manifest.json",
+        "type": "Manifest",
+      }
+    },
+    {
+      "type": "Update",
+      "object": {
+        "id": "https://example.org/iiif/museum/2/manifest.json",
+        "type": "Manifest"
+      }
+    }
+  ]
 }
 ```
 
@@ -109,16 +109,16 @@ __Usage:__ Record each time the list is crawled. Start from the `last` page and 
 
 ```json-doc
 {
-	"@context": [
-		"http://iiif.io/api/presentation/3/context.json",
-		"https://www.w3.org/ns/activitystreams"],
-	"id": "https://example.org/iiif/discovery-1.json",
-	"type": "CollectionPage",
-	"partOf": {
-		"id": "https://example.org/iiif/discovery.json",
-		"type": "Collection"
-	},
-	"next": {
+  "@context": [
+    "http://iiif.io/api/presentation/3/context.json",
+    "https://www.w3.org/ns/activitystreams"],
+  "id": "https://example.org/iiif/discovery-1.json",
+  "type": "CollectionPage",
+  "partOf": {
+    "id": "https://example.org/iiif/discovery.json",
+    "type": "Collection"
+  },
+  "next": {
 		"id": "https://data.getty.edu/iiif/discovery-2.json",
 		"type": "CollectionPage"
 	},
@@ -264,6 +264,8 @@ __Usage:__  Record each time the list is crawled. Start from the `last` page and
 
 ## Processing Algorithm
 
+The aim of the processing algorithm is to inform harvesters how to make best use of the available information, with an aim of finding "indexable content" -- the descriptive information that might be used to build an index of the resources to allow them to be discovered.  For different types of resource, and for different domains, the "indexable content" will have different formats and semantics. At worst, the data in the Manifest and other IIIF resources might be used, despite its presentational intent. 
+
 __Collection Algorithm__
 
 Given the URI of an ActivityStreams Collection (`collection`) as input, a conforming processor SHOULD:
@@ -294,6 +296,9 @@ Given the URI of a target resource (`target`), a conforming processor SHOULD:
 * Retrieve the representation of `target` via HTTP(S)
 * Minimally validate that it conforms to the appropriate specification
 * Find the URI of the resource at `target.id` (`targetId`)
+* If the resource has the `seeAlso` property, then for each resource referenced ('extref')
+  * If the `format` and/or `profile` of `extref` is understood by the processor, then it should retrieve any representations that it can process to extract Indexable Content.
+
 * Extract the indexable content from the resource, using resource type specific functionality.
 * Check if `target.seeAlso` is true, and if so, iterate through the available descriptions at `target.seeAlso[x].id` and extract the indexable content from those resources.
 * Index the content against `targetId`
