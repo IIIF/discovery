@@ -320,7 +320,7 @@ Given the URI of a target resource (`target`), a conforming processor SHOULD:
   * Consumer: https://github.com/mixterj/activity_streams_harvest
 
 * NCSU
-  * Endpoint: https://scrc.lib.ncsu.edu/sal_staging/iiif-discovery.json
+  * Endpoint: https://d.lib.ncsu.edu/collections/iiif-discovery.json
 
 * IIIF
   * Endpoint: http://preview.iiif.io/root/discovery_list/community/groups/discovery/registry_as.json
