@@ -1,4 +1,9 @@
-# IIIF Resource Discovery
+
+# IIIF Resource Discovery - OUT OF DATE
+
+
+__Previous Draft__<br/>This document is a former draft of the discovery specification, currently available at [http://preview.iiif.io/api/discovery/api/discovery/0.1/](http://preview.iiif.io/api/discovery/api/discovery/0.1/).  Please see that specification instead.
+{: .warning}
 
 This approach to the discovery of IIIF Resources uses standard, semantic technologies for easy optimization of crawling and indexing processes.  The core technology choice, as agreed upon at the Toronto Working Groups meeting, is the W3C's [ActivityStreams 2.0](https://www.w3.org/TR/activitystreams-core/) specification.
 
@@ -154,13 +159,6 @@ Additional metadata can be added to the basic change list without affecting the 
 * The application, tool or service used to perform the activity, given in `instrument`.
 * The datestamp of when the activity started, given in `startTime`.
 * And any additional information about the Manifest, from the Presentation API.
-
-Valuable information about the Manifest, for discovery purposes, includes:
-
-* A `label` to display to the end-user of a discovery system
-* A `thumbnail` to display to the end-user of a discovery system
-* A `seeAlso` reference to additional metadata that would allow a discovery system to provide a richer or more detailed experience.
-* A `within` link to a Collection that that Manifest is part of for context.
 
 __Usage__: Record each time the list is crawled. Start from the `last` page and work backwards through the list until a datestamp before the previous time a crawl occurred is encountered.
 
