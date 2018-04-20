@@ -209,7 +209,7 @@ The core activity types are:
 * `Update`: Any change to the resource.  In a system that does not distinguish creation from modification, then all changes MAY be `Update`s. 
 * `Delete`: The deletion of the resource, or its de-publication from the web. 
 
-Additional activities which institutions may also find helpful are listed [in this annex](activities/).
+Additional activities which institutions may also find helpful are listed [in this annex](activities.md/).
 
 __Usage:__  Record each time the list is crawled. Start from the `last` page and work backwards through the list until a datestamp before the previous time a crawl occurred is encountered. Only process the most recent change per resource, including deleting resources.
 
@@ -318,7 +318,7 @@ Given the URI of a target resource (`target`), a conforming processor SHOULD:
   * Consumer: https://github.com/mixterj/activity_streams_harvest
 
 * NCSU
-  * Endpoint: https://scrc.lib.ncsu.edu/sal_staging/iiif-discovery.json
+  * Endpoint: https://d.lib.ncsu.edu/collections/iiif-discovery.json
 
 * IIIF
   * Endpoint: http://preview.iiif.io/root/discovery_list/community/groups/discovery/registry_as.json

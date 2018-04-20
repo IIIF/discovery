@@ -6,6 +6,7 @@ This repository contains:
 
   * Initial Working Draft of an Import specification, now in the main IIIF repo:
   [http://preview.iiif.io/api/discovery/api/discovery/0.1/](http://preview.iiif.io/api/discovery/api/discovery/0.1/)
+  * [Working Draft of an Import specification](https://github.com/IIIF/discovery/blob/master/source/api/import/0.1/index.md)
   * Various files copied from the [main iiif.io github](https://github.com/IIIF/iiif.io) to enable development of draft specifications. 
 
 See also:
