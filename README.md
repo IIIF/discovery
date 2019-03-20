@@ -20,7 +20,8 @@ See also:
   * Implementation: https://github.com/mattmcgrattan/iiif-activity-streams
 
 * OCLC
-  * Endpoint: http://52.204.112.237:3051/activity-streams
+  * Endpoint: https://researchworks.oclc.org/digital/activity-stream/collection/16007_p267401coll32
+  * Aggregated Endpoints: https://researchworks.oclc.org/digital/discovery-index
   * Implementation: https://github.com/mixterj/iiif_activity_streams_creation
   * Consumer: https://github.com/mixterj/activity_streams_harvest
 
